@@ -66,6 +66,7 @@
     "prettier-plugin-astro": "0.14.1",
     "sass-embedded": "^1.92.1"
   },
+  "packageManager": "pnpm@10.23.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
