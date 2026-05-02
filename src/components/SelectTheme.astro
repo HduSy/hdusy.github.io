@@ -113,10 +113,7 @@ function kebabToTitleCase(str: string): string {
     }
 
     connectedCallback() {
-      // window events, requires cleanup
-      window.addEventListener('keydown', this.onWindowKeydown, {
-        signal: this.#controller.signal,
-      })
+      // no global keyboard shortcut for theme selector
     }
 
     disconnectedCallback() {

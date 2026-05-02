@@ -150,10 +150,7 @@ const config: SiteConfig = {
     },
   },
   // Social links to display in the footer.
-  socialLinks: {
-    github: 'https://github.com/HduSy',
-    rss: true, // Set to true to include an RSS feed link in the footer
-  },
+  socialLinks: undefined,
   // Configuration for Giscus comments.
   // To set up Giscus, follow the instructions at https://giscus.app/
   // You'll need a GitHub repository with discussions enabled and the Giscus app installed.
