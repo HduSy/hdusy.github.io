@@ -1,6 +1,7 @@
 ---
 title: 微调 Fine-tuning
 published: 2026-05-02
+created: 1777725064
 description: 从Prompt、RAG到微调——什么时候该用什么，以及SFT、DPO、LoRA、QLoRA核心概念解析
 tags: [AI, 微调, Fine-tuning, LLM, SFT, LoRA]
 ---
