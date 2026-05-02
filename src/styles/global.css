@@ -302,6 +302,10 @@ article img {
     @apply my-6.5;
   }
 
+  table {
+    @apply block overflow-x-auto;
+  }
+
   b,
   strong,
   th,
