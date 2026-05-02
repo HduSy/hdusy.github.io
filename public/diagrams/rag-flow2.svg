@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 310" font-family="'Segoe UI', system-ui, sans-serif">
+  <style>
+    .box { rx: 12; ry: 12; stroke-width: 2; }
+    .label { font-size: 16px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .sublabel { font-size: 13px; fill: #495057; text-anchor: middle; dominant-baseline: central; }
+    .arrow { stroke: #868e96; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#868e96" />
+    </marker>
+  </defs>
+  <!-- Row 1 -->
+  <rect class="box" x="30" y="30" width="220" height="90" fill="#ffc9c9" stroke="#ff8787" />
+  <text class="label" x="140" y="62">知识固化</text>
+  <text class="sublabel" x="140" y="88">(参数锁死)</text>
+  <line class="arrow" x1="250" y1="75" x2="330" y2="75" />
+  <rect class="box" x="330" y="30" width="240" height="90" fill="#b2f2bb" stroke="#69db7c" />
+  <text class="label" x="450" y="62">外挂知识库</text>
+  <text class="sublabel" x="450" y="88">(动态更新文档)</text>
+  <!-- Row 2 -->
+  <rect class="box" x="30" y="170" width="220" height="90" fill="#ffc9c9" stroke="#ff8787" />
+  <text class="label" x="140" y="202">无法溯源</text>
+  <text class="sublabel" x="140" y="228">(黑盒生成)</text>
+  <line class="arrow" x1="250" y1="215" x2="330" y2="215" />
+  <rect class="box" x="330" y="170" width="240" height="90" fill="#b2f2bb" stroke="#69db7c" />
+  <text class="label" x="450" y="202">检索+引用</text>
+  <text class="sublabel" x="450" y="228">(答案有据可查)</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 160" font-family="'Segoe UI', system-ui, sans-serif">
+  <style>
+    .box { rx: 12; ry: 12; stroke-width: 2; }
+    .label { font-size: 18px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .arrow { stroke: #868e96; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#868e96" />
+    </marker>
+  </defs>
+  <rect class="box" x="20" y="30" width="200" height="80" fill="#a5d8ff" stroke="#4dabf7" />
+  <text class="label" x="120" y="70">用户提问</text>
+  <line class="arrow" x1="220" y1="70" x2="300" y2="70" />
+  <rect class="box" x="300" y="30" width="220" height="80" fill="#d0bfff" stroke="#9775fa" />
+  <text class="label" x="410" y="70">检索外部知识库</text>
+  <line class="arrow" x1="520" y1="70" x2="600" y2="70" />
+  <rect class="box" x="600" y="30" width="240" height="80" fill="#b2f2bb" stroke="#69db7c" />
+  <text class="label" x="720" y="70">大模型生成回答</text>
+</svg>

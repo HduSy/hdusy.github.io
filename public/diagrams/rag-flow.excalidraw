@@ -1,0 +1,24 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {"type":"rectangle","id":"r_def","x":50,"y":30,"width":220,"height":70,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","boundElements":[{"id":"t_r_def","type":"text"}]},
+    {"type":"text","id":"t_r_def","x":55,"y":50,"width":210,"height":25,"text":"用户提问","fontSize":20,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_def","originalText":"用户提问","autoResize":true},
+
+    {"type":"arrow","id":"a1","x":270,"y":65,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_retrieve","x":350,"y":30,"width":220,"height":70,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","boundElements":[{"id":"t_r_retrieve","type":"text"}]},
+    {"type":"text","id":"t_r_retrieve","x":355,"y":40,"width":210,"height":45,"text":"检索外部知识","fontSize":20,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_retrieve","originalText":"检索外部知识","autoResize":true},
+
+    {"type":"arrow","id":"a2","x":570,"y":65,"width":80,"height":0,"points":[[0,0],[80,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_generate","x":650,"y":30,"width":220,"height":70,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","boundElements":[{"id":"t_r_generate","type":"text"}]},
+    {"type":"text","id":"t_r_generate","x":655,"y":40,"width":210,"height":45,"text":"大模型生成回答","fontSize":20,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_generate","originalText":"大模型生成回答","autoResize":true},
+
+    {"type":"text","id":"t_note","x":280,"y":120,"width":380,"height":20,"text":"检索结果 + 问题一起作为上下文输入","fontSize":16,"fontFamily":1,"strokeColor":"#868e96","originalText":"检索结果 + 问题一起作为上下文输入","autoResize":true}
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}

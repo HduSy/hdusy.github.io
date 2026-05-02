@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" font-family="'Segoe UI', system-ui, sans-serif">
+  <style>
+    .box { rx: 12; ry: 12; stroke-width: 2; }
+    .label { font-size: 16px; fill: #1e1e1e; text-anchor: middle; dominant-baseline: central; }
+    .sublabel { font-size: 12px; fill: #495057; text-anchor: middle; dominant-baseline: central; }
+    .arrow { stroke: #868e96; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .note { font-size: 14px; fill: #868e96; text-anchor: middle; dominant-baseline: central; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#868e96" />
+    </marker>
+  </defs>
+  <rect class="box" x="20" y="30" width="220" height="100" fill="#a5d8ff" stroke="#4dabf7" />
+  <text class="label" x="130" y="62">用户提问</text>
+  <text class="sublabel" x="130" y="88">"Q3营收多少？"</text>
+  <line class="arrow" x1="240" y1="80" x2="320" y2="80" />
+  <rect class="box" x="320" y="30" width="240" height="100" fill="#d0bfff" stroke="#9775fa" />
+  <text class="label" x="440" y="62">向量检索</text>
+  <text class="sublabel" x="440" y="88">从知识库找相关片段</text>
+  <line class="arrow" x1="560" y1="80" x2="640" y2="80" />
+  <rect class="box" x="640" y="30" width="240" height="100" fill="#b2f2bb" stroke="#69db7c" />
+  <text class="label" x="760" y="62">大模型生成</text>
+  <text class="sublabel" x="760" y="88">基于检索结果回答</text>
+  <text class="note" x="460" y="190">检索到的内容作为上下文</text>
+</svg>
