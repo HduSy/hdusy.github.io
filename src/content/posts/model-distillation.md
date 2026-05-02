@@ -1,6 +1,7 @@
 ---
 title: 模型蒸馏（Model Distillation）
 published: 2026-05-02
+created: 1777692878
 description: 让小模型学大模型的"解题思路"——从核心原理到 DeepSeek-R1-Distill 实战解析
 tags: [AI, 模型蒸馏, DeepSeek, LLM]
 ---

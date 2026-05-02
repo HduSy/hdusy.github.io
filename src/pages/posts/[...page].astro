@@ -13,7 +13,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   if (sortedPosts.length === 0) {
     return []
   }
-  return paginate(sortedPosts.reverse(), { pageSize: siteConfig.pageSize })
+  return paginate(sortedPosts, { pageSize: siteConfig.pageSize })
 }) satisfies GetStaticPaths
 
 const { page } = Astro.props

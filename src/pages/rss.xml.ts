@@ -14,7 +14,7 @@ export async function GET(_context: AstroGlobal) {
     )
     return
   }
-  const posts = await getSortedPosts()
+  const posts = await getSortedPosts() // already sorted newest-first, no reverse needed
   return rss({
     stylesheet: '/rss.xsl',
     title: siteConfig.title,

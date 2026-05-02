@@ -11,8 +11,9 @@ import PageHeader from '~/components/PageHeader.astro'
 export const getStaticPaths = (async ({ paginate }) => {
   const tagsGroup = await TagsGroup.build()
   const pages = tagsGroup.collations.flatMap((tags) => {
-    // Use flatMap to lift the posts for each tag into a single array
-    return paginate(tags.entries.reverse(), {
+    // entries are already sorted newest-first via getSortedPosts()
+    // reverse to get oldest-first for display (newest last page)
+    return paginate([...tags.entries].reverse(), {
       props: { tagTitle: tags.title },
       params: { tag: tags.titleSlug },
       pageSize: siteConfig.pageSize,

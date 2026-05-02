@@ -1,6 +1,7 @@
 ---
 title: AI发展编年史
 published: 2026-05-02
+created: 1777687618
 description: 从Transformer到Agent，一张脉络图看懂AI技术演进的关键节点
 tags: [AI, LLM, Transformer, Agent, 多模态]
 ---

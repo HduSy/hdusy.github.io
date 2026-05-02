@@ -7,7 +7,8 @@ const postsCollection = defineCollection({
     z.object({
       title: z.string(),
       published: z.coerce.date(),
-      // updated: z.coerce.date().optional(),
+      created: z.number(), // Unix timestamp (seconds), sort key
+      updated: z.number().optional(), // Unix timestamp, not visible on page
       draft: z.boolean().optional().default(false),
       description: z.string().optional(),
       author: z.string().optional(),
