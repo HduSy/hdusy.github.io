@@ -64,6 +64,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['findfunplus.cn', '127.0.0.1', 'localhost'],
+    },
   },
   integrations: [sitemap(), // Must come after expressive-code integration
   expressiveCode({
