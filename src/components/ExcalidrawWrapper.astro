@@ -1,0 +1,30 @@
+---
+import { ExcalidrawRaw, type ExcalidrawProps } from './ExcalidrawRaw'
+import '@excalidraw/excalidraw/index.css'
+
+type Props = ExcalidrawProps & { height?: string }
+const { height = '300px', ...props } = Astro.props
+---
+
+<div class="excalidraw-wrapper" style={`height: ${height}`}>
+  <ExcalidrawRaw client:only="react" {...props} />
+</div>
+
+<style>
+  .excalidraw-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid var(--theme-accent, #1e1e1e);
+  }
+</style>
+
+<style is:global>
+  .excalidraw-wrapper .excalidraw .App-toolbar-content,
+  .excalidraw-wrapper .excalidraw .context-menu {
+    display: none !important;
+  }
+  .excalidraw-wrapper .excalidraw {
+    --ui-font: inherit;
+  }
+</style>

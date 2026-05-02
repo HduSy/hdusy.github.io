@@ -1,0 +1,24 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {"type":"text","id":"title3","x":30,"y":10,"width":500,"height":30,"text":"RAG 的工作流程","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"RAG 的工作流程","autoResize":true},
+
+    {"type":"rectangle","id":"r_ask","x":30,"y":80,"width":220,"height":100,"roundness":{"type":3},"backgroundColor":"#a5d8ff","fillStyle":"solid","boundElements":[{"id":"t_r_ask","type":"text"}]},
+    {"type":"text","id":"t_r_ask","x":35,"y":90,"width":210,"height":45,"text":"用户提问\n\"Q3营收多少？\"","fontSize":16,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_ask","originalText":"用户提问\n\"Q3营收多少？\"","autoResize":true},
+
+    {"type":"arrow","id":"a_step1","x":250,"y":130,"width":100,"height":0,"points":[[0,0],[100,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_search","x":350,"y":80,"width":220,"height":100,"roundness":{"type":3},"backgroundColor":"#d0bfff","fillStyle":"solid","boundElements":[{"id":"t_r_search","type":"text"}]},
+    {"type":"text","id":"t_r_search","x":355,"y":90,"width":210,"height":45,"text":"向量检索\n从知识库找相关片段","fontSize":16,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_search","originalText":"向量检索\n从知识库找相关片段","autoResize":true},
+
+    {"type":"arrow","id":"a_step2","x":570,"y":130,"width":100,"height":0,"points":[[0,0],[100,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_answer","x":670,"y":80,"width":220,"height":100,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","boundElements":[{"id":"t_r_answer","type":"text"}]},
+    {"type":"text","id":"t_r_answer","x":675,"y":90,"width":210,"height":45,"text":"大模型生成\n基于检索结果回答","fontSize":16,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_answer","originalText":"大模型生成\n基于检索结果回答","autoResize":true},
+
+    {"type":"text","id":"t_ctx","x":300,"y":210,"width":380,"height":20,"text":"检索到的内容作为上下文","fontSize":16,"fontFamily":1,"strokeColor":"#868e96","originalText":"检索到的内容作为上下文","autoResize":true}
+  ],
+  "appState": {"viewBackgroundColor": "#ffffff"}
+}

@@ -1,0 +1,25 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {"type":"text","id":"title2","x":30,"y":10,"width":500,"height":30,"text":"RAG 恰好对症下药","fontSize":24,"fontFamily":1,"strokeColor":"#1e1e1e","originalText":"RAG 恰好对症下药","autoResize":true},
+
+    {"type":"rectangle","id":"r_problem1","x":30,"y":70,"width":220,"height":90,"roundness":{"type":3},"backgroundColor":"#ffc9c9","fillStyle":"solid","boundElements":[{"id":"t_r_problem1","type":"text"}]},
+    {"type":"text","id":"t_r_problem1","x":35,"y":80,"width":210,"height":45,"text":"知识固化\n(参数锁死)","fontSize":18,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_problem1","originalText":"知识固化\n(参数锁死)","autoResize":true},
+
+    {"type":"arrow","id":"a_arrow1","x":250,"y":115,"width":100,"height":0,"points":[[0,0],[100,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_solve1","x":350,"y":70,"width":220,"height":90,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","boundElements":[{"id":"t_r_solve1","type":"text"}]},
+    {"type":"text","id":"t_r_solve1","x":355,"y":80,"width":210,"height":45,"text":"外挂知识库\n(动态更新文档)","fontSize":18,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_solve1","originalText":"外挂知识库\n(动态更新文档)","autoResize":true},
+
+    {"type":"rectangle","id":"r_problem2","x":30,"y":210,"width":220,"height":90,"roundness":{"type":3},"backgroundColor":"#ffc9c9","fillStyle":"solid","boundElements":[{"id":"t_r_problem2","type":"text"}]},
+    {"type":"text","id":"t_r_problem2","x":35,"y":220,"width":210,"height":45,"text":"无法溯源\n(黑盒生成)","fontSize":18,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_problem2","originalText":"无法溯源\n(黑盒生成)","autoResize":true},
+
+    {"type":"arrow","id":"a_arrow2","x":250,"y":255,"width":100,"height":0,"points":[[0,0],[100,0]],"endArrowhead":"arrow"},
+
+    {"type":"rectangle","id":"r_solve2","x":350,"y":210,"width":220,"height":90,"roundness":{"type":3},"backgroundColor":"#b2f2bb","fillStyle":"solid","boundElements":[{"id":"t_r_solve2","type":"text"}]},
+    {"type":"text","id":"t_r_solve2","x":355,"y":220,"width":210,"height":45,"text":"检索+引用\n(答案有据可查)","fontSize":18,"fontFamily":1,"strokeColor":"#1e1e1e","textAlign":"center","verticalAlign":"middle","containerId":"r_solve2","originalText":"检索+引用\n(答案有据可查)","autoResize":true}
+  ],
+  "appState": {"viewBackgroundColor": "#ffffff"}
+}
