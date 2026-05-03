@@ -1,7 +1,7 @@
 ---
 title: RAG（检索增强生成）
 published: 2026-05-02
-createdAt: 1746228600000
+created: 1746228600
 description: 让大模型开卷考试，且必须标注出处——RAG的核心原理与实战解析
 tags: [AI, RAG, LLM, 检索增强生成]
 ---
