@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fei Liu — Frame mark 最终变体</title>
+<style>
+  :root { --paper:#f4efe6; --paper-2:#efe7d8; --ink:#1a1714; --ink-soft:#3a342d; --accent:#f0652e; --line:#c9c0b2; --muted:#7d756a; --dark:#14110d; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:ui-monospace,"SF Mono",Menlo,monospace; padding:48px 24px;
+    background-image:linear-gradient(to right,rgba(26,23,20,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(26,23,20,.05) 1px,transparent 1px); background-size:16px 16px; }
+  .wrap { max-width:1000px; margin:0 auto; }
+  h1 { font-family:system-ui,sans-serif; font-weight:600; font-size:28px; margin:0 0 6px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.18em; margin-bottom:36px; }
+  .row { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+  .card { border:1px solid var(--line); background:var(--paper-2); padding:24px; margin-bottom:20px; }
+  .card.dark { background:var(--dark); border-color:#463f36; }
+  .tag { color:var(--accent); font-size:10.5px; text-transform:uppercase; letter-spacing:.18em; margin-bottom:14px; }
+  .card.dark .tag { color:var(--accent); }
+  .lbl { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.12em; margin-top:6px; }
+  .col { display:flex; flex-direction:column; align-items:center; gap:4px; }
+  img { display:block; }
+  .big { width:120px; height:120px; }
+  .mid { width:48px; height:48px; }
+  .small { width:32px; height:32px; }
+  .tiny { width:16px; height:16px; }
+  .lockup { width:280px; height:auto; }
+  p { color:var(--ink-soft); font-size:12.5px; line-height:1.65; margin:14px 0 0; }
+  .card.dark p { color:#968d7e; }
+  .note { color:var(--muted); font-size:11px; margin-top:32px; border-top:1px solid var(--line); padding-top:16px; line-height:1.7; }
+  code { background:rgba(26,23,20,.06); padding:1px 5px; border-radius:3px; font-size:11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fei Liu — Frame mark</h1>
+  <div class="sub">Concept B · 最终变体 · 墨黑 / 烧橙 / 纸色</div>
+
+  <div class="card">
+    <div class="tag">Primary · 亮色(透明底,墨黑 + 烧橙)</div>
+    <div class="row">
+      <div class="col"><img class="big" src="fei-liu-mark-frame.svg" alt=""><div class="lbl">120px</div></div>
+      <div class="col"><img class="mid" src="fei-liu-mark-frame.svg" alt=""><div class="lbl">48px</div></div>
+      <div class="col"><img class="small" src="fei-liu-mark-frame.svg" alt=""><div class="lbl">32px</div></div>
+    </div>
+    <p>主版。四角 L 角标 + 中心烧橙十字,墨黑线条 3px,透明背景。</p>
+  </div>
+
+  <div class="card dark">
+    <div class="tag">Dark · 暗色(纸色线条 + 烧橙)</div>
+    <div class="row">
+      <div class="col"><img class="big" src="fei-liu-mark-frame-dark.svg" alt=""><div class="lbl">120px</div></div>
+      <div class="col"><img class="small" src="fei-liu-mark-frame-dark.svg" alt=""><div class="lbl">32px</div></div>
+    </div>
+    <p>暗色模式:线条换成纸色 #f4efe6,橙心不变。配合站点深碳底 #14110d。</p>
+  </div>
+
+  <div class="card">
+    <div class="tag">Monochrome · 单色(全墨黑)</div>
+    <div class="row">
+      <div class="col"><img class="big" src="fei-liu-mark-frame-mono.svg" alt=""><div class="lbl">120px</div></div>
+    </div>
+    <p>单色墨黑版,用于黑白印刷 / 单色场景。需要纸色单色版把 #1a1714 换成 #f4efe6 即可。</p>
+  </div>
+
+  <div class="card">
+    <div class="tag">Horizontal Lockup · 横排组合</div>
+    <div class="row">
+      <div class="col"><img class="lockup" src="fei-liu-lockup-horizontal.svg" alt="Fei Liu lockup"><div class="lbl">280px 宽</div></div>
+    </div>
+    <p>符号 + "Fei Liu" 字标。注意:SVG 内文字用的是 <code>'Smiley Sans', system-ui</code>,独立打开会回退到系统字体;生产环境建议用「SVG 符号 + HTML 文字(Smiley Sans via next/font)」分开渲染,字才准。</p>
+  </div>
+
+  <div class="card">
+    <div class="tag">Favicon · 小尺寸专用(加粗)</div>
+    <div class="row">
+      <div class="col"><img class="mid" src="fei-liu-favicon.svg" alt=""><div class="lbl">48px</div></div>
+      <div class="col"><img class="small" src="fei-liu-favicon.svg" alt=""><div class="lbl">32px</div></div>
+      <div class="col"><img class="tiny" src="fei-liu-favicon.svg" alt=""><div class="lbl">16px</div></div>
+    </div>
+    <p>角标加粗到 10px、中心改成实心橙方块,16px 下仍清晰。用作 favicon / app icon。</p>
+  </div>
+
+  <div class="note">
+    文件都在 <code>public/logos/</code>:fei-liu-mark-frame.svg(主)、-dark、-mono、fei-liu-favicon.svg、fei-liu-lockup-horizontal.svg。<br>
+    接入站点:① nav wordmark 旁加符号;② favicon 换成 fei-liu-favicon.svg;③ 暗色模式自动切 dark 版。要我现在接到站点里吗?
+  </div>
+</div>
+</body>
+</html>

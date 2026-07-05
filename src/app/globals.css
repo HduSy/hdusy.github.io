@@ -64,6 +64,19 @@ body {
     linear-gradient(to right, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
     linear-gradient(to bottom, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
   background-size: 16px 16px;
+  /* Sticky footer: body is a flex column at least one viewport tall, and main
+     grows to fill the leftover space so the Footer pins to the bottom on short
+     pages (and sits at the document bottom on long ones). Same ©-to-bottom
+     gap everywhere. Nav is fixed and the duotone svg is absolute, so neither
+     takes part in this flow. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Stretch the page body so the Footer is pushed to the bottom on short pages. */
+main {
+  flex: 1 0 auto;
 }
 
 /* Paper grain. Rendered by <Grain /> as a fixed, pointer-events-none layer. */

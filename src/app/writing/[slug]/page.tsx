@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/reveal";
 import { ArticleBody } from "@/components/ArticleBody";
+import { BackLink } from "@/components/BackLink";
 import { articles, getArticle } from "@/lib/articles";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 
@@ -71,12 +72,9 @@ export default async function Page({
       <main className="pt-24">
         <article className="mx-auto max-w-[720px] px-6 pb-24 md:px-10">
           <Reveal>
-            <a
-              href="/#writing"
-              className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-accent"
-            >
+            <BackLink className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-accent">
               <ArrowLeft size={14} weight="bold" /> Writing
-            </a>
+            </BackLink>
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
               <a href="/#about" className="text-ink transition-colors hover:text-accent">Fei Liu</a>
               <span className="text-accent">{article.tag}</span>
@@ -102,12 +100,9 @@ export default async function Page({
             <ArticleBody blocks={article.blocks} />
           </div>
           <div className="mt-16 border-t border-line/60 pt-8">
-            <a
-              href="/#writing"
-              className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:text-accent"
-            >
+            <BackLink className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:text-accent">
               <ArrowLeft size={14} weight="bold" /> Back to writing
-            </a>
+            </BackLink>
           </div>
         </article>
       </main>

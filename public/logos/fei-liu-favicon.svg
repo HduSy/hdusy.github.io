@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Fei Liu favicon">
+  <title>Fei Liu — Favicon</title>
+  <style>
+    .ln { stroke: #1a1714; }
+    @media (prefers-color-scheme: dark) { .ln { stroke: #f4efe6; } }
+  </style>
+  <g fill="none" class="ln" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 36 L16 16 L36 16"/>
+    <path d="M64 16 L84 16 L84 36"/>
+    <path d="M84 64 L84 84 L64 84"/>
+    <path d="M36 84 L16 84 L16 64"/>
+  </g>
+  <rect x="42" y="42" width="16" height="16" fill="#f0652e"/>
+</svg>

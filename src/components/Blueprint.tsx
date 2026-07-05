@@ -7,16 +7,15 @@ export function Blueprint() {
   return (
     <section id="about" className="relative">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
-        <Reveal>
-          <h2 className="font-serif text-5xl font-medium tracking-tight text-ink md:text-6xl">
-            About
-          </h2>
-        </Reveal>
-
-        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          {/* Left: profile — bio (role leads in), interests */}
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
+          {/* Left: title + profile — bio (role leads in), interests */}
           <div className="md:col-span-5">
-            <Reveal delay={0.05}>
+            <Reveal>
+              <h2 className="font-serif text-5xl font-medium tracking-tight text-ink md:text-6xl">
+                About
+              </h2>
+            </Reveal>
+            <Reveal delay={0.05} className="mt-12">
               <div className="space-y-4 font-serif text-base leading-relaxed text-ink-soft md:text-lg">
                 {site.bio.map((p, i) => (
                   <p key={i}>
@@ -39,7 +38,7 @@ export function Blueprint() {
           {/* Right: blueprint archive figure */}
           <div className="md:col-span-7">
             <Reveal delay={0.1}>
-              <figure className="relative min-h-[440px] border border-line/60 bg-paper-2/40 p-6 md:p-10">
+              <figure className="relative mx-auto w-full max-w-[420px] min-h-[420px] border border-line/60 bg-paper-2/40 p-6 md:min-h-[560px] md:max-w-none md:p-10">
                 <Corners />
                 <Plus top="16%" left="20%" />
                 <Plus top="70%" left="28%" />

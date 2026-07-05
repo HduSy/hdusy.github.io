@@ -23,15 +23,18 @@ export const site = {
   nameCJK: "Fei Liu",
   role: "前端（全栈）工程师",
   bio: [
-    "5年前端开发经验，先后任职于哔哩哔哩、阿里巴巴国际站（ICBU）。",
+    "5年前端开发经验，先后任职于哔哩哔哩、阿里巴巴。",
     "擅长复杂前端应用研发与性能优化，在前端工程化与构建优化上经验扎实，主导过 B站运营技术部低代码活动平台设计与实现、ICBU 用增技术部全场景页面 P90 性能优化、多端 Monorepo 架构整合。",
     "近两年深度实践 AI Coding，研发效能 x10，具备 AI Native 应用独立研发能力。",
   ],
-  kicker: "explorer / builder",
   sloganLines: [
-    "探索 AI 的边界与商业可能",
-    "在公开构建里找到自己的节奏",
+    "日照香炉生紫烟，",
+    "遥看瀑布挂前川。",
+    "飞流直下三千尺，",
+    "疑是银河落九天。",
   ],
+  // Token emphasized in-accent within sloganLines (the wordmark 飞流).
+  sloganHighlight: "飞流",
   timeline: [
     { period: "2021-2023", place: "哔哩哔哩" },
     { period: "2024-至今", place: "阿里" },

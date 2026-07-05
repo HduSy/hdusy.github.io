@@ -1,7 +1,10 @@
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { WritingList } from "./WritingList";
 import { SketchStar } from "./sketch";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+
+const PREVIEW_COUNT = 4;
 
 export function Writing() {
   return (
@@ -17,38 +20,19 @@ export function Writing() {
           </p>
         </Reveal>
 
-        <ul className="mt-12">
-          {site.writings.map((w, i) => (
-            <Reveal key={w.title} delay={i * 0.05}>
-              <li className="border-t border-line/50 first:border-t-0">
-                <a
-                  href={w.href}
-                  className="group grid cursor-text grid-cols-[4rem_1fr] gap-4 py-6 transition-colors hover:bg-accent/5 md:grid-cols-[6rem_1fr_auto] md:gap-8 md:py-8"
-                >
-                  <span className="pt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-                    {w.date}
-                  </span>
-                  <div>
-                    <h3 className="font-serif text-2xl text-ink transition-colors group-hover:text-accent md:text-3xl">
-                      {w.title}
-                    </h3>
-                    <p className="mt-2 max-w-[52ch] text-ink-soft">{w.excerpt}</p>
-                  </div>
-                  <div className="hidden flex-col items-end justify-between gap-4 md:flex">
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
-                      {w.tag}
-                    </span>
-                    <ArrowUpRight
-                      size={18}
-                      weight="regular"
-                      className="text-muted transition-colors group-hover:text-accent"
-                    />
-                  </div>
-                </a>
-              </li>
-            </Reveal>
-          ))}
-        </ul>
+        <WritingList items={site.writings.slice(0, PREVIEW_COUNT)} />
+
+        {site.writings.length > PREVIEW_COUNT && (
+          <Reveal>
+            <a
+              href="/writing/"
+              className="group mt-10 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-accent"
+            >
+              All Writing
+              <ArrowRight size={14} weight="bold" className="transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+          </Reveal>
+        )}
       </div>
     </section>
   );

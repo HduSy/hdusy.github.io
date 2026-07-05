@@ -19,7 +19,7 @@ const smiley = localFont({
 const SITE_URL = "https://hdsy.github.io";
 
 const DESC =
-  "Fei Liu's personal blueprint — AI builder & writer. Exploring AI's edges and business potential, shipping small tools in public.";
+  "Fei Liu's personal blueprint — AI builder & writer. Tracking AI trends and shipping small applications in public.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,6 +37,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fei Liu - AI builder & writer",
     description: DESC,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logos/fei-liu-favicon.svg", type: "image/svg+xml" },
+    ],
   },
 };
 

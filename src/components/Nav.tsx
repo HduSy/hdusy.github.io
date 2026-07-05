@@ -27,8 +27,13 @@ export function Nav() {
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-center justify-between px-6 md:px-10">
         <a
           href="/#hero"
-          className="font-serif text-xl font-semibold tracking-tight text-ink"
+          className="inline-flex items-center gap-2 font-serif text-xl font-semibold tracking-tight text-ink"
         >
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcSet="/logos/fei-liu-mark-frame-dark.svg" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/fei-liu-mark-frame.svg" alt="" className="h-6 w-6" />
+          </picture>
           {site.wordmark}
         </a>
         <nav className="flex items-center gap-5 md:gap-7">

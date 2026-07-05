@@ -1,8 +1,26 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
 import { Crosshair } from "./visual";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+
+/* Render one slogan line, wrapping every occurrence of the highlight token
+   in the accent color. Used to emphasize the wordmark 飞流 inside the poem. */
+function SloganLine({ line, highlight }: { line: string; highlight?: string }) {
+  if (!highlight || !line.includes(highlight)) return <>{line}</>;
+  const parts = line.split(highlight);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && <span className="text-accent">{highlight}</span>}
+        </Fragment>
+      ))}
+    </>
+  );
+}
 
 export function Hero() {
   return (
@@ -11,7 +29,7 @@ export function Hero() {
       className="relative flex min-h-[100dvh] flex-col justify-center pt-24 pb-16"
     >
       <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-12 px-6 md:grid-cols-12 md:gap-8 md:px-10">
-        {/* Left: wordmark + kicker + slogan + CTA */}
+        {/* Left: wordmark + slogan + CTA */}
         <div className="md:col-span-7">
           <Reveal>
             <h1
@@ -23,18 +41,16 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-4 font-serif text-sm tracking-[0.04em] text-accent">
-              {site.kicker}
+            <p className="mt-8 max-w-[20ch] whitespace-pre-line font-serif text-2xl leading-snug text-ink-soft md:text-3xl">
+              {site.sloganLines.map((line, i) => (
+                <Fragment key={i}>
+                  <SloganLine line={line} highlight={site.sloganHighlight} />
+                  {i < site.sloganLines.length - 1 ? "\n" : null}
+                </Fragment>
+              ))}
             </p>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-6 max-w-[20ch] font-serif text-2xl leading-snug text-ink-soft md:text-3xl">
-              {site.sloganLines[0]}
-              <br />
-              {site.sloganLines[1]}
-            </p>
-          </Reveal>
-          <Reveal delay={0.2}>
             <div className="mt-10 flex items-center gap-4">
               <a
                 href="#writing"

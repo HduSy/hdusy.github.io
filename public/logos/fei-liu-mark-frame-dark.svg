@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Fei Liu corner-frame mark (dark)">
+  <title>Fei Liu — Frame (dark)</title>
+  <g fill="none" stroke="#f4efe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 32 L12 12 L32 12"/>
+    <path d="M68 12 L88 12 L88 32"/>
+    <path d="M88 68 L88 88 L68 88"/>
+    <path d="M32 88 L12 88 L12 68"/>
+  </g>
+  <g stroke="#f0652e" stroke-width="3" stroke-linecap="round">
+    <line x1="50" y1="42" x2="50" y2="58"/>
+    <line x1="42" y1="50" x2="58" y2="50"/>
+  </g>
+</svg>

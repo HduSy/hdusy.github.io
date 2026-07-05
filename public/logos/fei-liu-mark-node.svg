@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Fei Liu node mark">
+  <title>Fei Liu — Node</title>
+  <g stroke="#1a1714" stroke-width="7" stroke-linecap="round">
+    <line x1="50" y1="16" x2="50" y2="84"/>
+    <line x1="16" y1="50" x2="84" y2="50"/>
+  </g>
+  <rect x="44" y="44" width="12" height="12" fill="#f0652e" transform="rotate(45 50 50)"/>
+</svg>
