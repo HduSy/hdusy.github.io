@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/logos/fei-liu-favicon.svg", type: "image/svg+xml" },
+      { url: "/logos/fei-liu-mark-frame.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/logos/fei-liu-mark-frame-dark.svg", media: "(prefers-color-scheme: dark)" },
     ],
   },
 };
