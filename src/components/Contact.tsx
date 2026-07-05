@@ -6,7 +6,6 @@ import {
   EnvelopeSimple,
   XLogo,
 } from "@phosphor-icons/react/dist/ssr";
-import { Squiggle } from "./sketch";
 
 export function Contact() {
   return (
@@ -19,7 +18,6 @@ export function Contact() {
           >
             <span className="pb-2">Let&apos;s make something small.</span>
           </h2>
-          <Squiggle className="mt-2 h-2 w-56 text-accent" strokeWidth={2.5} />
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mt-6 max-w-[48ch] text-lg text-ink-soft">
@@ -29,7 +27,7 @@ export function Contact() {
         <Reveal delay={0.14}>
           <a
             href={`mailto:${site.email}`}
-            className="group mt-10 inline-flex items-center gap-3 border-b border-ink pb-1 font-serif text-2xl text-ink md:text-3xl"
+            className="group mt-10 inline-flex items-center gap-3 border-b border-ink pb-1 font-serif text-2xl text-ink transition-colors hover:text-accent md:text-3xl"
           >
             {site.email}
             <ArrowUpRight

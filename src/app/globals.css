@@ -153,6 +153,21 @@ body {
   user-select: none;
 }
 
+/* Tokenscope feature-card heatmap: each cell twinkles like a star. Per-cell
+   delay/duration are set inline (deterministic, from the seeded RNG in
+   HeatmapBg) so the cells drift in and out of sync — a starfield, not a
+   synchronized pulse. Reduced-motion users see the static pattern via the
+   global * animation override above. */
+@keyframes ts-twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.ts-twinkle {
+  animation-name: ts-twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--paper);

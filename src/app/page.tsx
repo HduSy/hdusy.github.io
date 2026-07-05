@@ -13,8 +13,8 @@ export default function Home() {
       <main>
         <Hero />
         <Blueprint />
-        <Writing />
         <BuildSection />
+        <Writing />
         <Contact />
       </main>
       <Footer />

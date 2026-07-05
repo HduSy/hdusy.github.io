@@ -1,7 +1,7 @@
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
 import { Corners, Plus, Spec } from "./visual";
-import { Squiggle, SketchArrow, SketchStar } from "./sketch";
+import { SketchArrow, SketchStar } from "./sketch";
 
 export function Blueprint() {
   return (
@@ -11,20 +11,27 @@ export function Blueprint() {
           <h2 className="font-serif text-5xl font-medium tracking-tight text-ink md:text-6xl">
             About
           </h2>
-          <Squiggle className="mt-2 h-2 w-24 text-accent" strokeWidth={2.5} />
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          {/* Left: bio */}
+          {/* Left: profile — bio (role leads in), interests */}
           <div className="md:col-span-5">
             <Reveal delay={0.05}>
-              <div className="space-y-4 font-serif text-lg leading-relaxed text-ink-soft md:text-xl">
+              <div className="space-y-4 font-serif text-base leading-relaxed text-ink-soft md:text-lg">
                 {site.bio.map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i}>
+                    {i === 0 ? (
+                      <>
+                        <span className="font-medium text-ink">{site.role}</span>，{p}
+                      </>
+                    ) : (
+                      p
+                    )}
+                  </p>
                 ))}
               </div>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                {site.est}
+              <p className="mt-6 font-serif text-base text-ink-soft md:text-lg">
+                {site.interests.join(" · ")}
               </p>
             </Reveal>
           </div>
@@ -52,27 +59,41 @@ export function Blueprint() {
                 {/* portrait */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://avatars.githubusercontent.com/HduSy?v=4"
+                  src="/avatar.jpg"
                   alt="Fei Liu 档案照"
-                  className="relative z-10 mx-auto aspect-square w-[46%] rounded-full object-cover"
+                  className="absolute left-1/2 top-1/2 z-10 aspect-square w-[46%] -translate-x-1/2 -translate-y-1/2 rounded-full object-cover"
                 />
                 <SketchArrow className="pointer-events-none absolute left-[12%] top-[44%] h-12 w-20 text-accent/70" />
-                <SketchStar className="pointer-events-none absolute right-[10%] top-[16%] h-5 w-5 text-accent/60" />
                 <SketchStar className="pointer-events-none absolute left-[8%] bottom-[26%] h-4 w-4 text-line" />
 
                 {/* top-left identity */}
                 <div className="absolute left-6 top-6 md:left-10 md:top-10">
                   <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
-                    AI MEDIA / BUILDER
+                    AI EXPLORER / BUILDER
                   </p>
                   <span className="mt-2 block h-px w-10 bg-line" />
                 </div>
 
+                {/* top-right: experience timeline */}
+                <div className="absolute right-6 top-6 text-right md:right-10 md:top-10">
+                  <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
+                    EXPERIENCE
+                  </p>
+                  <span className="mt-2 block h-px w-10 bg-line ml-auto" />
+                  <div className="mt-2 space-y-1">
+                    {site.timeline.map((t) => (
+                      <p key={t.period} className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
+                        <span className="text-ink-soft">{t.period}</span> · {t.place}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
                 {/* bottom-left spec sheet */}
                 <div className="absolute bottom-6 left-6 space-y-1 md:bottom-10 md:left-10">
-                  <Spec k="FOCUS" v="CONTENT & AI" />
-                  <Spec k="TOPIC" v="AI EDGES & BIZ" />
-                  <Spec k="FORMAT" v="ARTICLE / VIDEO" />
+                  <Spec k="FOCUS" v="AI & OPEN-SOURCE & SEO" />
+                  <Spec k="TOPIC" v="AI TREND & APPLICATION" />
+                  <Spec k="FORMAT" v="CODE/ARTICLE" />
                   <Spec k="VALUE" v="LONG-TERM" />
                 </div>
 

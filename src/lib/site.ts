@@ -14,36 +14,40 @@ export type Build = {
   kind: string;
   desc: string;
   year: string;
-  tag: "OSS" | "TOOL" | "APP" | "SKILL";
+  tag: "OSS" | "TOOL" | "APP" | "SKILL" | "PAGE";
   href: string;
 };
 
 export const site = {
   wordmark: "Fei Liu",
   nameCJK: "Fei Liu",
-  role: "AI builder & writer",
-  kicker: "AI builder × build in public",
+  role: "前端（全栈）工程师",
+  bio: [
+    "5年前端开发经验，先后任职于哔哩哔哩、阿里巴巴国际站（ICBU）。",
+    "擅长复杂前端应用研发与性能优化，在前端工程化与构建优化上经验扎实，主导过 B站运营技术部低代码活动平台设计与实现、ICBU 用增技术部全场景页面 P90 性能优化、多端 Monorepo 架构整合。",
+    "近两年深度实践 AI Coding，研发效能 x10，具备 AI Native 应用独立研发能力。",
+  ],
+  kicker: "explorer / builder",
   sloganLines: [
     "探索 AI 的边界与商业可能",
     "在公开构建里找到自己的节奏",
   ],
-  bio: [
-    "我是 Fei Liu,专注 AI 内容实践与小型工具构建。",
-    "写文章、做产品、记录在公开构建中学到的东西。",
-    "相信小而持续的力量。",
+  timeline: [
+    { period: "2021-2023", place: "哔哩哔哩" },
+    { period: "2024-至今", place: "阿里" },
   ],
+  interests: ["开源爱好者", "喜欢刷 Twitter", "SEO 探索中"],
   email: "alifeiliu@gmail.com",
   github: "https://github.com/HduSy",
   twitter: "https://x.com/alifeiliu",
-  coord: "31°14′ N, 121°28′ E",
-  est: "EST. 2024",
+  coord: "30°16′ N, 120°09′ E",
   writings: [
     {
       date: "2025.06",
       title: "Claude Code 实战:把脚本变成 agent",
       excerpt: "从一段 50 行的脚本出发,一步步给它记忆、工具和回退路径。",
       tag: "AGENT",
-      href: "#",
+      href: "/writing/claude-code-agent/",
     },
     {
       date: "2025.05",
@@ -70,8 +74,8 @@ export const site = {
   builds: [
     {
       name: "Tokenscope",
-      kind: "Claude CLI 用量监测",
-      desc: "macOS / Windows 菜单栏应用,实时显示 Claude CLI 的 token 用量、预估成本与模型 / MCP / Skill 调用明细,本地读取会话日志,零侵入。",
+      kind: "Claude Code 用量监测",
+      desc: "macOS / Windows 菜单栏应用,实时显示 Claude Code 的 token 用量、预估成本与模型 / MCP / Skill 调用明细,本地读取会话日志,零侵入。",
       year: "2026.06",
       tag: "TOOL",
       href: "https://github.com/HduSy/tokenscope",
@@ -81,7 +85,7 @@ export const site = {
       kind: "产品官网",
       desc: "Tokenscope 菜单栏应用的产品落地页,Next.js + Tailwind v4 构建。",
       year: "2026.06",
-      tag: "OSS",
+      tag: "PAGE",
       href: "https://tokenscope.app",
     },
     {
@@ -89,8 +93,8 @@ export const site = {
       kind: "AI 面试助手",
       desc: "在同一个对话框里完成面试的模拟、复盘、练习与预测,画像与简历只存浏览器本地,接入五家大模型供应商。",
       year: "2026.05",
-      tag: "APP",
-      href: "https://findfunplus.cn",
+      tag: "PAGE",
+      href: "http://findfunplus.cn/",
     },
     {
       name: "resume-md2pdf",

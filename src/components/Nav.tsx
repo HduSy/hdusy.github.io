@@ -5,10 +5,10 @@ import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { site } from "@/lib/site";
 
 const links = [
-  { label: "ABOUT", href: "#about" },
-  { label: "WRITING", href: "#writing" },
-  { label: "BUILD", href: "#build" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "ABOUT", href: "/#about" },
+  { label: "BUILD", href: "/#build" },
+  { label: "WRITING", href: "/#writing" },
+  { label: "CONTACT", href: "/#contact" },
 ];
 
 export function Nav() {
@@ -26,7 +26,7 @@ export function Nav() {
       />
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-center justify-between px-6 md:px-10">
         <a
-          href="#hero"
+          href="/#hero"
           className="font-serif text-xl font-semibold tracking-tight text-ink"
         >
           {site.wordmark}

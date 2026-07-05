@@ -1,12 +1,13 @@
 import type { Build } from "@/lib/site";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { Corners } from "./visual";
-import { Squiggle, SketchStar } from "./sketch";
+import { Corners, HeatmapBg } from "./visual";
+import { SketchStar } from "./sketch";
 import {
   ArrowUpRight,
   Graph,
   MicrophoneStage,
+  Globe,
   FileText,
 } from "@phosphor-icons/react/dist/ssr";
 
@@ -18,6 +19,7 @@ function renderIcon(tag: Build["tag"]) {
     className: "text-muted transition-colors group-hover:text-accent",
   };
   if (tag === "TOOL") return <Graph {...common} />;
+  if (tag === "PAGE") return <Globe {...common} />;
   if (tag === "APP") return <MicrophoneStage {...common} />;
   if (tag === "SKILL") return <FileText {...common} />;
   return <ArrowUpRight {...common} />;
@@ -34,7 +36,6 @@ export function BuildSection() {
           <h2 className="font-serif text-5xl font-medium tracking-tight text-ink md:text-6xl">
             Build
           </h2>
-          <Squiggle className="mt-2 h-2 w-24 text-accent" strokeWidth={2.5} />
           <p className="mt-4 max-w-[42ch] text-ink-soft">
             小型工具与开源项目,边做边记。
           </p>
@@ -47,15 +48,10 @@ export function BuildSection() {
               href={feature.href}
               className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-line/60 p-6 md:p-10"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://picsum.photos/seed/tokenscope-app/1600/600"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
-              />
+              <HeatmapBg />
               <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/80 to-paper/20" />
               <Corners />
-              <div className="relative z-10 max-w-[64ch]">
+              <div className="relative z-10">
                 <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
                   {feature.tag} · {feature.year}
                 </span>
@@ -94,15 +90,13 @@ function BuildCard({ build }: { build: Build }) {
     >
       <div className="flex items-start justify-between">
         <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
-          {build.tag}
+          {build.tag} · {build.year}
         </span>
         {renderIcon(build.tag)}
       </div>
       <div>
         <h3 className="font-serif text-2xl text-ink md:text-3xl">{build.name}</h3>
-        <p className="mt-1 font-mono text-xs text-muted">
-          {build.kind} · {build.year}
-        </p>
+        <p className="mt-1 font-mono text-xs text-muted">{build.kind}</p>
         <p className="mt-3 text-sm text-ink-soft">{build.desc}</p>
       </div>
     </a>

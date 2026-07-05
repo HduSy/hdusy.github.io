@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 // Smiley Sans (得意黑) self-hosted. Variable font, single woff2.
@@ -12,10 +13,51 @@ const smiley = localFont({
   preload: false,
 });
 
+// Production origin (GitHub Pages, HduSy.github.io root). metadataBase resolves
+// every relative URL in metadata (canonical, og:url, og:image) against this.
+// Swap for a custom domain if one is configured.
+const SITE_URL = "https://hdsy.github.io";
+
+const DESC =
+  "Fei Liu's personal blueprint — AI builder & writer. Exploring AI's edges and business potential, shipping small tools in public.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Fei Liu - AI builder & writer",
-  description:
-    "Fei Liu's personal blueprint. Exploring AI edges, shipping small things in public.",
+  description: DESC,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    siteName: "Fei Liu",
+    title: "Fei Liu - AI builder & writer",
+    description: DESC,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fei Liu - AI builder & writer",
+    description: DESC,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4efe6" },
+    { media: "(prefers-color-scheme: dark)", color: "#14110d" },
+  ],
+};
+
+// Person structured data — ties the name, role, and profiles (sameAs) together
+// for entity recognition in name searches. SSR'd verbatim into the HTML (not
+// client-injected), so it's visible to crawlers without JS execution.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Fei Liu",
+  jobTitle: "AI builder & writer",
+  url: SITE_URL,
+  email: `mailto:${site.email}`,
+  sameAs: [site.github, site.twitter],
 };
 
 export default function RootLayout({
@@ -26,6 +68,10 @@ export default function RootLayout({
   return (
     <html lang="zh" className={`${smiley.variable} antialiased`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         {/* Duotone SVG filter: grayscale mapped to ink + orange.
             Referenced by .duotone images across the site. */}
         <svg

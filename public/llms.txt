@@ -1,0 +1,16 @@
+# Fei Liu
+
+> AI builder & frontend engineer based in Hangzhou. Builds small tools in public and writes notes on AI practice. 5 years frontend experience across Bilibili and Alibaba (ICBU), focused on complex frontend apps, performance, and AI Coding.
+
+## Writing
+- [Claude Code 实战:把脚本变成 agent](https://hdsy.github.io/writing/claude-code-agent/): 从一段 50 行的脚本出发,逐步给它记忆、工具和回退路径,改造成一个能自己判断和纠错的 agent。
+
+## Build
+- [Tokenscope](https://github.com/HduSy/tokenscope): macOS / Windows 菜单栏应用,实时显示 Claude Code 的 token 用量、预估成本与模型 / MCP / Skill 调用明细。
+- [resume-md2pdf](https://github.com/HduSy/resume-md2pdf): 把 Markdown 简历按目标岗位套上视觉主题,用 Puppeteer 导出 A4 矢量 PDF。
+
+## Links
+- [GitHub](https://github.com/HduSy)
+- [Twitter](https://x.com/alifeiliu)
+- Email: alifeiliu@gmail.com
+- Site: https://hdsy.github.io

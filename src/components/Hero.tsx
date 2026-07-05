@@ -2,7 +2,6 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
 import { Crosshair } from "./visual";
-import { Squiggle } from "./sketch";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export function Hero() {
@@ -20,8 +19,8 @@ export function Hero() {
               style={{ fontSize: "clamp(3.5rem, 15vw, 9rem)" }}
             >
               {site.wordmark}
+              <span className="sr-only">{" — AI builder & writer"}</span>
             </h1>
-            <Squiggle className="mt-1 h-2 w-44 text-accent" strokeWidth={2.5} />
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 font-serif text-sm tracking-[0.04em] text-accent">
@@ -39,10 +38,10 @@ export function Hero() {
             <div className="mt-10 flex items-center gap-4">
               <a
                 href="#writing"
-                className="inline-flex items-center gap-2 bg-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper transition-colors hover:bg-accent"
+                className="group inline-flex items-center gap-2 bg-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper transition-colors hover:bg-accent"
               >
                 WRITING
-                <ArrowRight size={14} weight="bold" />
+                <ArrowRight size={14} weight="bold" className="transition-transform duration-200 group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
