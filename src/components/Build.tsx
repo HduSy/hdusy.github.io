@@ -27,7 +27,7 @@ export function BuildSection() {
   const [feature, ...rest] = site.builds;
 
   return (
-    <section id="build" className="relative border-t border-line/50">
+    <section id="build" className="relative">
       <SketchStar className="pointer-events-none absolute left-6 top-16 h-5 w-5 text-accent/40 md:left-12" />
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>

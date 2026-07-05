@@ -5,7 +5,7 @@ import { Squiggle, SketchArrow, SketchStar } from "./sketch";
 
 export function Blueprint() {
   return (
-    <section id="about" className="relative border-t border-line/50">
+    <section id="about" className="relative">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <h2 className="font-serif text-5xl font-medium tracking-tight text-ink md:text-6xl">

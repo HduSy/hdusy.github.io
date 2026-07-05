@@ -5,7 +5,7 @@ import { Squiggle, SketchStar } from "./sketch";
 
 export function Writing() {
   return (
-    <section id="writing" className="relative border-t border-line/50">
+    <section id="writing" className="relative">
       <SketchStar className="pointer-events-none absolute right-6 top-16 h-6 w-6 text-accent/40 md:right-12" />
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>

@@ -10,7 +10,7 @@ import { Squiggle } from "./sketch";
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-line/50">
+    <section id="contact">
       <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-10 md:py-40">
         <Reveal>
           <h2
