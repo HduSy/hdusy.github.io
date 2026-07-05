@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
+import { SectionLabel } from "./visual";
 import {
   ArrowUpRight,
   GithubLogo,
@@ -12,8 +13,9 @@ export function Contact() {
     <section id="contact">
       <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-10 md:py-40">
         <Reveal>
+          <SectionLabel index="04" tag="// CONNECT" />
           <h2
-            className="font-serif italic tracking-tight text-ink"
+            className="mt-6 font-serif italic tracking-tight text-ink"
             style={{ fontSize: "clamp(2.5rem, 7vw, 5.5rem)", lineHeight: 1.1 }}
           >
             <span className="pb-2">Let&apos;s make something small.</span>

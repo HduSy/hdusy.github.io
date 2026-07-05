@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { Crosshair } from "./visual";
+import { SectionLabel } from "./visual";
+import { HeroCarousel } from "./HeroCarousel";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 /* Render one slogan line, wrapping every occurrence of the highlight token
@@ -28,6 +28,11 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[100dvh] flex-col justify-center pt-24 pb-16"
     >
+      <div className="mx-auto mb-10 w-full max-w-[1280px] px-6 md:mb-12 md:px-10">
+        <Reveal>
+          <SectionLabel index="00" tag="// INTRO" />
+        </Reveal>
+      </div>
       <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-12 px-6 md:grid-cols-12 md:gap-8 md:px-10">
         {/* Left: wordmark + slogan + CTA */}
         <div className="md:col-span-7">
@@ -69,27 +74,10 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Right: portrait with crosshair frame */}
+        {/* Right: vertical image carousel */}
         <div className="md:col-span-5">
           <Reveal delay={0.12}>
-            <figure className="relative aspect-[4/5] w-full max-w-[420px] md:ml-auto">
-              <Image
-                src="/hero-portrait.jpg"
-                alt="Fei Liu 肖像"
-                fill
-                priority
-                unoptimized
-                sizes="(max-width: 768px) 100vw, 420px"
-                className="object-cover"
-              />
-              <Crosshair className="left-2 top-2" />
-              <Crosshair className="right-2 top-2" />
-              {/* bottom caption strip, functional - identifies the figure */}
-              <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-paper/85 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-soft backdrop-blur-[2px]">
-                <span>FIG // FEI LIU</span>
-                <span className="text-muted">PORTRAIT</span>
-              </figcaption>
-            </figure>
+            <HeroCarousel slides={site.heroGallery} />
           </Reveal>
         </div>
       </div>

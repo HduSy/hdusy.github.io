@@ -39,6 +39,20 @@ export function Corners() {
   );
 }
 
+/* motion.dev-style section eyebrow: a mono index, a hairline rule that
+   stretches across the column, and a short descriptor on the right. Sits
+   above a section's display heading — a structural line that numbers the
+   page (00 hero → 01 about → 02 build → 03 writing → 04 contact). */
+export function SectionLabel({ index, tag }: { index: string; tag: string }) {
+  return (
+    <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+      <span className="text-accent">{index}</span>
+      <span aria-hidden className="h-px flex-1 bg-line" />
+      <span className="hidden whitespace-nowrap sm:inline">{tag}</span>
+    </div>
+  );
+}
+
 /* Scattered plus mark at an arbitrary position. */
 export function Plus({
   top,

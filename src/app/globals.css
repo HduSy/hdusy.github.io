@@ -155,6 +155,22 @@ main {
   filter: url(#duotone) contrast(1.05);
 }
 
+/* Diagonal-stripe frame ("hatch mat") around the hero carousel photo. An 8px
+   band painted with a repeating 45° stripe in the background grid's exact gray
+   (ink @ 6%) directly over the page — so the ring reads as a continuation of
+   the blueprint grid rather than a separate filled frame. No solid fill: a
+   fill would wash out lines this faint. */
+.hatch-mat {
+  padding: 8px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--ink) 6%, transparent) 0,
+    color-mix(in srgb, var(--ink) 6%, transparent) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+}
+
 /* Scattered blueprint plus marks. */
 .plus-mark {
   position: absolute;

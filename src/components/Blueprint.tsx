@@ -1,13 +1,16 @@
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { Corners, Plus, Spec } from "./visual";
+import { Corners, Plus, SectionLabel, Spec } from "./visual";
 import { SketchArrow, SketchStar } from "./sketch";
 
 export function Blueprint() {
   return (
     <section id="about" className="relative">
       <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
+        <Reveal>
+          <SectionLabel index="01" tag="// PROFILE" />
+        </Reveal>
+        <div className="mt-10 grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:mt-12 md:gap-16">
           {/* Left: title + profile — bio (role leads in), interests */}
           <div className="md:col-span-5">
             <Reveal>

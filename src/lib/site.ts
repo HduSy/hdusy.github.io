@@ -35,6 +35,13 @@ export const site = {
   ],
   // Token emphasized in-accent within sloganLines (the wordmark 飞流).
   sloganHighlight: "飞流",
+  // Hero right-column image carousel (vertical). Each slide carries a
+  // location shown in the frame's caption.
+  heroGallery: [
+    { src: "/hero-portrait.jpg", alt: "Passion", location: "Shanghai" },
+    { src: "/bilibili-building.jpeg", alt: "Bilibili Building", location: "Shanghai" },
+    { src: "/alibaba-building.jpeg", alt: "Alibaba Building", location: "Hangzhou" },
+  ],
   timeline: [
     { period: "2021-2023", place: "哔哩哔哩" },
     { period: "2024-至今", place: "阿里" },
