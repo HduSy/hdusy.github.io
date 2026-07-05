@@ -82,7 +82,7 @@ export const site = {
       desc: "Tokenscope 菜单栏应用的产品落地页,Next.js + Tailwind v4 构建。",
       year: "2025",
       tag: "OSS",
-      href: "https://github.com/HduSy/tokenscope-homepage",
+      href: "https://tokenscope.app",
     },
     {
       name: "OC-Review",
@@ -90,7 +90,7 @@ export const site = {
       desc: "在同一个对话框里完成面试的模拟、复盘、练习与预测,画像与简历只存浏览器本地,接入五家大模型供应商。",
       year: "2025",
       tag: "APP",
-      href: "#",
+      href: "https://findfunplus.cn",
     },
     {
       name: "resume-md2pdf",
@@ -98,7 +98,7 @@ export const site = {
       desc: "把 Markdown 简历按目标岗位套上视觉主题,用 Puppeteer 导出 A4 矢量 PDF,文字可选可复制,分页精确。",
       year: "2024",
       tag: "SKILL",
-      href: "#",
+      href: "https://github.com/HduSy/resume-md2pdf",
     },
   ] satisfies Build[],
 } as const;
