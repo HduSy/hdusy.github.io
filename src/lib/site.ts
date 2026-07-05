@@ -14,7 +14,7 @@ export type Build = {
   kind: string;
   desc: string;
   year: string;
-  tag: "OSS" | "TOOL" | "APP";
+  tag: "OSS" | "TOOL" | "APP" | "SKILL";
   href: string;
 };
 
@@ -69,27 +69,35 @@ export const site = {
   ] satisfies Writing[],
   builds: [
     {
-      name: "Inkwell",
-      kind: "Markdown 博客引擎",
-      desc: "极简、文件即数据库的写作站,支持双色调图片与蓝图主题。",
-      year: "2025",
-      tag: "OSS",
-      href: "#",
-    },
-    {
-      name: "Atlas",
-      kind: "个人知识图谱",
-      desc: "把笔记互相链接成图,本地优先,可导出为静态站点。",
+      name: "Tokenscope",
+      kind: "Claude CLI 用量监测",
+      desc: "macOS / Windows 菜单栏应用,实时显示 Claude CLI 的 token 用量、预估成本与模型 / MCP / Skill 调用明细,本地读取会话日志,零侵入。",
       year: "2025",
       tag: "TOOL",
+      href: "https://github.com/HduSy/tokenscope",
+    },
+    {
+      name: "Tokenscope Homepage",
+      kind: "产品官网",
+      desc: "Tokenscope 菜单栏应用的产品落地页,Next.js + Tailwind v4 构建。",
+      year: "2025",
+      tag: "OSS",
+      href: "https://github.com/HduSy/tokenscope-homepage",
+    },
+    {
+      name: "OC-Review",
+      kind: "AI 面试助手",
+      desc: "在同一个对话框里完成面试的模拟、复盘、练习与预测,画像与简历只存浏览器本地,接入五家大模型供应商。",
+      year: "2025",
+      tag: "APP",
       href: "#",
     },
     {
-      name: "Whisperboard",
-      kind: "语音速记",
-      desc: "走路时录一段,回家就是一篇结构化草稿。",
+      name: "resume-md2pdf",
+      kind: "Claude Code Skill",
+      desc: "把 Markdown 简历按目标岗位套上视觉主题,用 Puppeteer 导出 A4 矢量 PDF,文字可选可复制,分页精确。",
       year: "2024",
-      tag: "APP",
+      tag: "SKILL",
       href: "#",
     },
   ] satisfies Build[],

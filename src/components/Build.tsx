@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
   Graph,
   MicrophoneStage,
+  FileText,
 } from "@phosphor-icons/react/dist/ssr";
 
 // Declared outside render so we return elements, not component definitions.
@@ -18,11 +19,12 @@ function renderIcon(tag: Build["tag"]) {
   };
   if (tag === "TOOL") return <Graph {...common} />;
   if (tag === "APP") return <MicrophoneStage {...common} />;
+  if (tag === "SKILL") return <FileText {...common} />;
   return <ArrowUpRight {...common} />;
 }
 
 export function BuildSection() {
-  const [inkwell, atlas, whisper] = site.builds;
+  const [feature, ...rest] = site.builds;
 
   return (
     <section id="build" className="relative border-t border-line/50">
@@ -38,32 +40,32 @@ export function BuildSection() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {/* Big feature card */}
-          <Reveal delay={0.05} className="md:col-start-2 md:row-span-2">
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {/* Feature card */}
+          <Reveal delay={0.05} className="md:col-span-3">
             <a
-              href={inkwell.href}
-              className="group relative flex h-full min-h-[340px] flex-col justify-end overflow-hidden border border-line/60 p-6 md:p-8"
+              href={feature.href}
+              className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-line/60 p-6 md:p-10"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://picsum.photos/seed/inkwell-editor/900/1200"
+                src="https://picsum.photos/seed/tokenscope-app/1600/600"
                 alt=""
-                className="duotone absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/75 to-paper/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/80 to-paper/20" />
               <Corners />
-              <div className="relative z-10">
+              <div className="relative z-10 max-w-[64ch]">
                 <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
-                  {inkwell.tag} · {inkwell.year}
+                  {feature.tag} · {feature.year}
                 </span>
                 <h3 className="mt-3 font-serif text-4xl text-ink md:text-5xl">
-                  {inkwell.name}
+                  {feature.name}
                 </h3>
                 <p className="mt-1 font-mono text-xs text-muted">
-                  {inkwell.kind}
+                  {feature.kind}
                 </p>
-                <p className="mt-4 max-w-[34ch] text-ink-soft">{inkwell.desc}</p>
+                <p className="mt-4 text-ink-soft">{feature.desc}</p>
                 <span className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ink">
                   View
                   <ArrowUpRight size={14} weight="bold" />
@@ -73,33 +75,22 @@ export function BuildSection() {
           </Reveal>
 
           {/* Small cards */}
-          <Reveal delay={0.1}>
-            <BuildCard build={atlas} />
-          </Reveal>
-          <Reveal delay={0.15}>
-            <BuildCard build={whisper} accent />
-          </Reveal>
+          {rest.map((b, i) => (
+            <Reveal key={b.name} delay={0.1 + i * 0.05}>
+              <BuildCard build={b} />
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function BuildCard({
-  build,
-  accent = false,
-}: {
-  build: Build;
-  accent?: boolean;
-}) {
+function BuildCard({ build }: { build: Build }) {
   return (
     <a
       href={build.href}
-      className={`group relative flex h-full min-h-[180px] flex-col justify-between border p-6 transition-colors hover:border-accent ${
-        accent
-          ? "border-accent/30 bg-accent/[0.05]"
-          : "border-line/60 bg-paper-2/30"
-      }`}
+      className="group relative flex h-full min-h-[180px] flex-col justify-between border border-line/60 bg-paper-2/30 p-6 transition-colors hover:border-accent"
     >
       <div className="flex items-start justify-between">
         <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
@@ -108,7 +99,7 @@ function BuildCard({
         {renderIcon(build.tag)}
       </div>
       <div>
-        <h3 className="font-serif text-3xl text-ink">{build.name}</h3>
+        <h3 className="font-serif text-2xl text-ink md:text-3xl">{build.name}</h3>
         <p className="mt-1 font-mono text-xs text-muted">
           {build.kind} · {build.year}
         </p>

@@ -65,7 +65,7 @@ export function Hero() {
                 priority
                 unoptimized
                 sizes="(max-width: 768px) 100vw, 420px"
-                className="duotone object-cover"
+                className="object-cover"
               />
               <Crosshair className="left-2 top-2" />
               <Crosshair className="right-2 top-2" />

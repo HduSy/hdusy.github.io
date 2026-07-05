@@ -52,9 +52,9 @@ export function Blueprint() {
                 {/* portrait */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://picsum.photos/seed/feiliu-blueprint/480/480"
+                  src="https://avatars.githubusercontent.com/HduSy?v=4"
                   alt="Fei Liu 档案照"
-                  className="duotone relative z-10 mx-auto aspect-square w-[46%] rounded-full object-cover"
+                  className="relative z-10 mx-auto aspect-square w-[46%] rounded-full object-cover"
                 />
                 <SketchArrow className="pointer-events-none absolute left-[12%] top-[44%] h-12 w-20 text-accent/70" />
                 <SketchStar className="pointer-events-none absolute right-[10%] top-[16%] h-5 w-5 text-accent/60" />
