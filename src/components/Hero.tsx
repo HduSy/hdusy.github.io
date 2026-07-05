@@ -59,7 +59,7 @@ export function Hero() {
           <Reveal delay={0.12}>
             <figure className="relative aspect-[4/5] w-full max-w-[420px] md:ml-auto">
               <Image
-                src="https://picsum.photos/seed/feiliu-portrait/640/800"
+                src="/hero-portrait.png"
                 alt="Fei Liu 肖像"
                 fill
                 priority
