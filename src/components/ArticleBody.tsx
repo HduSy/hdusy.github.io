@@ -1,12 +1,16 @@
 import type { ArticleBlock } from "@/lib/articles";
+import { Reveal } from "./reveal";
 
 // Renders article blocks in the site's editorial style: Smiley Sans serif
-// body, mono code, accent-edged blockquote. Server component, no motion.
+// body, mono code, accent-edged blockquote. Each block reveals on scroll via
+// <Reveal>, so the body animates in step with the title and cover above.
 export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
   return (
     <div className="space-y-6">
       {blocks.map((b, i) => (
-        <Block key={i} block={b} />
+        <Reveal key={i}>
+          <Block block={b} />
+        </Reveal>
       ))}
     </div>
   );

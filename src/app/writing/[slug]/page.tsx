@@ -99,11 +99,13 @@ export default async function Page({
           <div className="mt-12">
             <ArticleBody blocks={article.blocks} />
           </div>
-          <div className="mt-16 border-t border-line/60 pt-8">
-            <BackLink className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:text-accent">
-              <ArrowLeft size={14} weight="bold" /> Back to writing
-            </BackLink>
-          </div>
+          <Reveal>
+            <div className="mt-16 border-t border-line/60 pt-8">
+              <BackLink className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:text-accent">
+                <ArrowLeft size={14} weight="bold" /> Back to writing
+              </BackLink>
+            </div>
+          </Reveal>
         </article>
       </main>
       <Footer />
