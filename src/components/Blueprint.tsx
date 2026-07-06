@@ -1,7 +1,6 @@
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { Corners, Plus, SectionLabel, Spec } from "./visual";
-import { SketchArrow, SketchStar } from "./sketch";
+import { Corners, OrbitRings, Plus, SectionLabel, Spec } from "./visual";
 
 export function Blueprint() {
   return (
@@ -51,23 +50,21 @@ export function Blueprint() {
                 {/* concentric ring */}
                 <span
                   aria-hidden
-                  className="absolute left-1/2 top-1/2 aspect-square w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/50"
+                  className="absolute left-1/2 top-1/2 aspect-square w-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/50"
                 />
                 <span
                   aria-hidden
-                  className="absolute left-1/2 top-1/2 aspect-square w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/30"
+                  className="absolute left-1/2 top-1/2 aspect-square w-[68%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/30"
                 />
+                <OrbitRings className="absolute left-1/2 top-1/2 aspect-square w-[68%] -translate-x-1/2 -translate-y-1/2 text-line" />
 
                 {/* portrait */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/avatar.jpg"
                   alt="Fei Liu 档案照"
-                  className="absolute left-1/2 top-1/2 z-10 aspect-square w-[46%] -translate-x-1/2 -translate-y-1/2 rounded-full object-cover"
+                  className="absolute left-1/2 top-1/2 z-10 aspect-square w-[34%] -translate-x-1/2 -translate-y-1/2 rounded-full object-cover"
                 />
-                <SketchArrow className="pointer-events-none absolute left-[12%] top-[44%] h-12 w-20 text-accent/70" />
-                <SketchStar className="pointer-events-none absolute left-[8%] bottom-[26%] h-4 w-4 text-line" />
-
                 {/* top-left identity */}
                 <div className="absolute left-6 top-6 md:left-10 md:top-10">
                   <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
@@ -104,9 +101,14 @@ export function Blueprint() {
                   <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
                     ID // FEI LIU
                   </p>
-                  <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
-                    {site.coord}
-                  </p>
+                  <div className="text-right">
+                    <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
+                      LAT <span className="text-ink-soft">{site.coord.lat}</span>
+                    </p>
+                    <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
+                      LON <span className="text-ink-soft">{site.coord.lon}</span>
+                    </p>
+                  </div>
                 </div>
               </figure>
             </Reveal>

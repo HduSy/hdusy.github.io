@@ -50,7 +50,7 @@ export const site = {
   email: "alifeiliu@gmail.com",
   github: "https://github.com/HduSy",
   twitter: "https://x.com/alifeiliu",
-  coord: "30°16′ N, 120°09′ E",
+  coord: { lat: "30°16′N", lon: "120°09′E", city: "Hangzhou", region: "CN" },
   writings: [
     {
       date: "2025.06",

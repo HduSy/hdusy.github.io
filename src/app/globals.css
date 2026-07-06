@@ -197,6 +197,28 @@ main {
   animation-iteration-count: infinite;
 }
 
+/* Counter-travelling arc segments around the Blueprint portrait. Each arc
+   moves along its circle by animating stroke-dashoffset over exactly one
+   circumference (seamless loop) — inner clockwise, outer counter-clockwise,
+   at different speeds so they pass each other. Animating dashoffset (not a
+   transform) sidesteps SVG transform-box/origin quirks. */
+.orbit-cw {
+  animation: orbit-cw 40s linear infinite;
+}
+.orbit-ccw {
+  animation: orbit-ccw 52s linear infinite;
+}
+/* r=37 circumference ≈ 232.48 — one lap clockwise per cycle. */
+@keyframes orbit-cw {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 232.48; }
+}
+/* r=50 circumference ≈ 314.16 — one lap counter-clockwise per cycle. */
+@keyframes orbit-ccw {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -314.16; }
+}
+
 ::selection {
   background: var(--accent);
   color: var(--paper);

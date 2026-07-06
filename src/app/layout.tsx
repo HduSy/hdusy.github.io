@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { site } from "@/lib/site";
+import { Grain } from "@/components/visual";
 import "./globals.css";
 
 // Smiley Sans (得意黑) self-hosted. Variable font, single woff2.
@@ -101,6 +102,7 @@ export default function RootLayout({
           </defs>
         </svg>
         {children}
+        <Grain />
       </body>
     </html>
   );

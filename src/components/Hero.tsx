@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { SectionLabel } from "./visual";
+import { Barcode, SectionLabel } from "./visual";
 import { HeroCarousel } from "./HeroCarousel";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
@@ -81,6 +81,11 @@ export function Hero() {
           </Reveal>
         </div>
       </div>
+      {/* Technical-document edge: full-width barcode encoding the contact email. */}
+      <Barcode
+        value={site.email}
+        className="pointer-events-none absolute inset-x-0 bottom-0 w-full text-line/60"
+      />
     </section>
   );
 }
