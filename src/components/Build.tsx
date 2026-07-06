@@ -47,6 +47,8 @@ export function BuildSection() {
           <Reveal delay={0.05} className="md:col-span-3">
             <a
               href={feature.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-line/60 p-6 md:p-10 transition-colors hover:border-accent"
             >
               <HeatmapBg />
@@ -87,6 +89,8 @@ function BuildCard({ build }: { build: Build }) {
   return (
     <a
       href={build.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative flex h-full min-h-[180px] flex-col justify-between border border-line/60 bg-paper-2/30 p-6 transition-colors hover:border-accent"
     >
       <div className="flex items-start justify-between">
