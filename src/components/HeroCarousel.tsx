@@ -66,6 +66,65 @@ export function HeroCarousel({ slides }: { slides: readonly HeroSlide[] }) {
     return () => el.removeEventListener("wheel", onWheel);
   }, [count]);
 
+  // Touch swipe (mobile): a vertical swipe advances one slide. Non-passive
+  // touchmove so preventDefault can claim the gesture; at either end the
+  // blocked direction is released so the page scrolls past the carousel
+  // (same rule as the wheel). Horizontal movement is always left to the page.
+  useEffect(() => {
+    const el = frameRef.current;
+    if (!el || count <= 1) return;
+    let startX = 0;
+    let startY = 0;
+    let done = false; // gesture classified
+    let capturing = false; // this vertical swipe is ours to handle
+    const onStart = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (!t) return;
+      startX = t.clientX;
+      startY = t.clientY;
+      done = false;
+      capturing = false;
+    };
+    const onMove = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (!t) return;
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      if (!done) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return; // wait for movement
+        done = true;
+        if (Math.abs(dy) > Math.abs(dx)) {
+          const dir = dy < 0 ? 1 : -1; // swipe up → next, down → prev
+          const i = indexRef.current;
+          capturing = dir > 0 ? i < count - 1 : i > 0; // claim only if it can move
+        }
+      }
+      if (capturing) e.preventDefault();
+    };
+    const onEnd = (e: TouchEvent) => {
+      const t = e.changedTouches[0];
+      const dy = t ? t.clientY - startY : 0;
+      const wasCapturing = capturing;
+      done = false;
+      capturing = false;
+      if (!wasCapturing || !t || Math.abs(dy) < 40) return; // tap / tiny move
+      const dir = dy < 0 ? 1 : -1;
+      setPage(([i]) => {
+        const next = i + dir;
+        if (next < 0 || next >= count) return [i, dir];
+        return [next, dir];
+      });
+    };
+    el.addEventListener("touchstart", onStart, { passive: true });
+    el.addEventListener("touchmove", onMove, { passive: false });
+    el.addEventListener("touchend", onEnd, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("touchmove", onMove);
+      el.removeEventListener("touchend", onEnd);
+    };
+  }, [count]);
+
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       if (!canNext) return;
