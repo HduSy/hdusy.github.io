@@ -47,7 +47,7 @@ export function BuildSection() {
               href={feature.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-line/60 p-6 md:p-10 transition-colors hover:border-accent"
+              className="group relative flex min-h-[280px] flex-col justify-center overflow-hidden border border-line/60 p-6 md:p-10 transition-colors hover:border-accent"
             >
               <HeatmapBg />
               <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/80 to-paper/20" />

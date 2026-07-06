@@ -154,7 +154,7 @@ export function HeatmapBg({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden
-      className={`pointer-events-none absolute inset-0 h-full w-full translate-x-[3px] translate-y-[4px] ${className}`}
+      className={`pointer-events-none absolute inset-0 h-full w-full translate-x-[2px] translate-y-[4px] ${className}`}
       viewBox={`0 0 ${HM_COLS * HM_PITCH} ${HM_ROWS * HM_PITCH}`}
       preserveAspectRatio="xMidYMid slice"
       style={{ fill: "var(--accent)" }}
