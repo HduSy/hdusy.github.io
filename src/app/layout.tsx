@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   title: "Fei Liu - AI builder & writer",
   description: DESC,
   alternates: { canonical: "/" },
+  verification: {
+    google: "_4emdtqWM--l_PWO3d_LgwerZ5Od2pFQQ4szpuvziDo",
+    other: { "msvalidate.01": "AB6E5DE3821D6902F37F222AEDC91131" },
+  },
   openGraph: {
     type: "profile",
     url: "/",
