@@ -89,7 +89,7 @@ function BuildCard({ build }: { build: Build }) {
       href={build.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex h-full min-h-[180px] flex-col justify-between border border-line/60 bg-paper-2/30 p-6 transition-colors hover:border-accent"
+      className="group relative flex h-full min-h-[180px] flex-col justify-start border border-line/60 bg-paper-2/30 p-6 transition-colors hover:border-accent"
     >
       <div className="flex items-start justify-between">
         <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-accent">
@@ -97,7 +97,7 @@ function BuildCard({ build }: { build: Build }) {
         </span>
         {renderIcon(build.tag)}
       </div>
-      <div>
+      <div className="mt-4">
         <h3 className="font-serif text-2xl text-ink md:text-3xl">{build.name}</h3>
         <p className="mt-1 font-mono text-xs text-muted">{build.kind}</p>
         <p className="mt-3 text-sm text-ink-soft">{build.desc}</p>
