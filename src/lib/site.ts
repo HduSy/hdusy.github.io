@@ -91,6 +91,14 @@ export const site = {
       href: "https://github.com/HduSy/tokenscope",
     },
     {
+      name: "SpendElonMoney",
+      kind: "万亿美元购物游戏",
+      desc: "亚马逊风格恶搞购物游戏,在一轮倒计时内花光马斯克的 $1,000,000,000,000,65 件离谱商品从 $2 可乐到 $1200 亿的整个 NBA,超时未下单则全部烧光,配套 SEO 内容站与社交分享卡。",
+      year: "2026.07",
+      tag: "PAGE",
+      href: "https://spend-elon-money.lol",
+    },
+    {
       name: "Tokenscope Homepage",
       kind: "产品官网",
       desc: "Tokenscope 菜单栏应用的产品落地页,Next.js + Tailwind v4 构建。",
